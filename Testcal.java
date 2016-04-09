@@ -14,6 +14,7 @@ public class Testcal extends Application{
 	public void start(Stage primaryStage){
 
 		Cal pane=new Cal();
+		pane.buttonAction();
 		Scene scene = new Scene(pane, 300, 450);
     	primaryStage.setTitle("Cal"); // Set the stage title
     	primaryStage.setScene(scene);
