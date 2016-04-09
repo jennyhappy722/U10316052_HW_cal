@@ -3,34 +3,21 @@
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
-import javafx.scene.control.Button;
 import javafx.scene.control.*;
-import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.application.Application;
-import javafx.scene.Scene;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import javafx.scene.shape.*;
 import javafx.util.*;
-import javafx.scene.layout.Pane;
-import javafx.scene.paint.Color;
-import javafx.beans.binding.Bindings;
-import javafx.beans.property.*;
-import javafx.beans.value.WritableObjectValue;
 import javafx.animation.*;
 import java.util.*;
 import javafx.event.*;
-import javafx.scene.control.*;
-
 
 public class Cal extends Pane {
 
-    	// Place nodes in the pane
+    // Place nodes in the pane
 	Menu menuView = new Menu("檢視(V)");
 	Menu menuEdit = new Menu("編輯(E)");
 	Menu menu = new Menu("說明(H)");
@@ -54,17 +41,7 @@ public class Cal extends Pane {
 	MenuItem d1 = new MenuItem("檢視說明(V)");
 	MenuItem d2 = new MenuItem("關於小算盤(A)");	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-		
-		
-	TextField tx=new TextField("0");
+
 	Button MC=new Button("MC");
 	Button MR=new Button("MR");
 	Button MS=new Button("MS");
@@ -83,14 +60,11 @@ public class Cal extends Pane {
 	Button devide=new Button("/");
 	Button q1=new Button("%");
 	
-	
-	
 	Button a4=new Button("4");
 	Button a5=new Button("5");
 	Button a6=new Button("6");
 	Button Multiply=new Button("*");
-	Button q2=new Button("1/x");
-	
+	Button q2=new Button("1/x");	
 	
 	Button a1=new Button("1");
 	Button a2=new Button("2");
@@ -101,8 +75,13 @@ public class Cal extends Pane {
 	Button a0=new Button("0");
 	Button q3=new Button(".");		
 	Button add=new Button("+");
-
-
+	
+	String tryy;
+	String a="0";
+	int b=0;
+	TextField tx=new TextField(a);
+	
+	
 
 	public Cal(){
 		menubar.setPrefSize(300,30);
@@ -170,17 +149,10 @@ public class Cal extends Pane {
 		add.relocate(183,375);
 		a0.setPrefSize(100,49);
 		q3.setPrefSize(50,49);
-		add.setPrefSize(50,49);
-	
+		add.setPrefSize(50,49);	
 		
-		
-		
-		
-		
-		
-		
-		
-		
+		tx.setAlignment(Pos.CENTER_RIGHT);
+		tx.setEditable(false);	
 		menu.getItems().addAll(d1,d2);
 		menuEdit.getItems().addAll(c1,c2,c3);
 		menuView.getItems().addAll(b1,b2,b3,b4,b5,b6,b6,b7,b8,b9,b10);
@@ -188,12 +160,118 @@ public class Cal extends Pane {
 		getChildren().addAll(menubar);
 		getChildren().addAll(tx,a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,q1,q2,q3,MC,MR,MS,Madd,Md);
 		getChildren().addAll(del,C,CE,devide,less,addandde,sqrt,Multiply,add,equ);
-
-
-    
-
   	}
+	public void buttonAction(){
+		a1.setOnAction(e -> {
+			tryy=tx.getText();
+			if(tryy.equals(a))
+			tx.setText("1");
+			else
+			tx.setText(tx.getText()+"1");
+		});
+		
+		a2.setOnAction(e -> {
+			tryy=tx.getText();
+			if(tryy.equals(a))
+			tx.setText("2");
+			else
+			tx.setText(tx.getText()+"2");
+		});		
+		
+		a3.setOnAction(e -> {
+			tryy=tx.getText();
+			if(tryy.equals(a))
+			tx.setText("3");
+			else
+			tx.setText(tx.getText()+"3");
+		});		
+		
+			a4.setOnAction(e -> {
+			tryy=tx.getText();
+			if(tryy.equals(a))
+			tx.setText("4");
+			else
+			tx.setText(tx.getText()+"4");
+		});	
+		
+		a5.setOnAction(e -> {
+			tryy=tx.getText();
+			if(tryy.equals(a))
+			tx.setText("5");
+			else
+			tx.setText(tx.getText()+"5");
+		});		
 
+		a6.setOnAction(e -> {
+			tryy=tx.getText();
+			if(tryy.equals(a))
+			tx.setText("6");
+			else
+			tx.setText(tx.getText()+"6");
+		});
+		
+		a7.setOnAction(e -> {
+			tryy=tx.getText();
+			if(tryy.equals(a))
+			tx.setText("7");
+			else
+			tx.setText(tx.getText()+"7");
+		});
 
+		a8.setOnAction(e -> {
+			tryy=tx.getText();
+			if(tryy.equals(a))
+			tx.setText("8");
+			else
+			tx.setText(tx.getText()+"8");
+		});
+		
+		a9.setOnAction(e -> {
+			tryy=tx.getText();
+			if(tryy.equals(a))
+			tx.setText("9");
+			else
+			tx.setText(tx.getText()+"9");
+		});		
+		
+		a0.setOnAction(e -> {
+			tryy=tx.getText();
+			if(tryy.equals(a))
+			tx.setText("0");
+			else
+			tx.setText(tx.getText()+"0");
+		});		
+	
+		q3.setOnAction(e -> {
+			tryy=tx.getText();
+			b=tryy.indexOf(".");
+			if(b!=-1)
+			tx.setText(tx.getText());
+			else		
+			tx.setText(tx.getText()+".");
+		});	
 
-}
+		addandde.setOnAction(e -> {
+			tryy=tx.getText();
+			b=tryy.indexOf("-");
+			if(b!=-1)
+			tx.setText(tryy.replace("-", ""));
+			else		
+			tx.setText("-"+tx.getText());
+		});	
+		
+		C.setOnAction(e -> {
+			tx.setText("0");
+		});			
+
+		/*del.setOnAction(e -> {
+			tryy=tx.getText();
+			int len=tryy.length()-1;
+			char last=tryy.chartAt(len);
+			System.out.println(last);
+			//tx.setText(split());
+		});	
+			*/
+		
+	}
+	
