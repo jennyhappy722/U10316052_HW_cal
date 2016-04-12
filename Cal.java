@@ -1,7 +1,6 @@
 //U10316052
 
 import javafx.application.Application;
-import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
@@ -80,6 +79,8 @@ public class Cal extends Pane {
 	String a="0";
 	int b=0;
 	TextField tx=new TextField(a);
+	double num1,num2;
+	int mode=0;
 	
 	
 
@@ -163,83 +164,131 @@ public class Cal extends Pane {
   	}
 	public void buttonAction(){
 		a1.setOnAction(e -> {
+			
+			if(mode!=0){
+				if(num1==Double.parseDouble(tx.getText()))	
+					tx.setText("0");
+			}	
 			tryy=tx.getText();
 			if(tryy.equals(a))
-			tx.setText("1");
+				tx.setText("1");
 			else
-			tx.setText(tx.getText()+"1");
+				tx.setText(tx.getText()+"1");	
+		
 		});
 		
 		a2.setOnAction(e -> {
+			
+			if(mode!=0){
+				if(num1==Double.parseDouble(tx.getText()))	
+					tx.setText("0");
+			}
+			
 			tryy=tx.getText();
 			if(tryy.equals(a))
-			tx.setText("2");
+				tx.setText("2");
 			else
-			tx.setText(tx.getText()+"2");
+				tx.setText(tx.getText()+"2");
 		});		
 		
 		a3.setOnAction(e -> {
+			
+			if(mode!=0){
+				if(num1==Double.parseDouble(tx.getText()))	
+					tx.setText("0");
+			}
 			tryy=tx.getText();
 			if(tryy.equals(a))
-			tx.setText("3");
+				tx.setText("3");
 			else
-			tx.setText(tx.getText()+"3");
+				tx.setText(tx.getText()+"3");
 		});		
 		
-			a4.setOnAction(e -> {
+		a4.setOnAction(e -> {
+			if(mode!=0){
+				if(num1==Double.parseDouble(tx.getText()))	
+					tx.setText("0");
+				}
+				
+				
 			tryy=tx.getText();
 			if(tryy.equals(a))
-			tx.setText("4");
+				tx.setText("4");
 			else
-			tx.setText(tx.getText()+"4");
+				tx.setText(tx.getText()+"4");
 		});	
 		
 		a5.setOnAction(e -> {
+			if(mode!=0){
+				if(num1==Double.parseDouble(tx.getText()))	
+					tx.setText("0");
+			}
+							
 			tryy=tx.getText();
 			if(tryy.equals(a))
-			tx.setText("5");
+				tx.setText("5");
 			else
-			tx.setText(tx.getText()+"5");
+				tx.setText(tx.getText()+"5");
 		});		
 
 		a6.setOnAction(e -> {
+			if(mode!=0){
+				if(num1==Double.parseDouble(tx.getText()))	
+					tx.setText("0");
+			}			
 			tryy=tx.getText();
 			if(tryy.equals(a))
-			tx.setText("6");
+				tx.setText("6");
 			else
-			tx.setText(tx.getText()+"6");
+				tx.setText(tx.getText()+"6");
 		});
 		
 		a7.setOnAction(e -> {
+			if(mode!=0){
+				if(num1==Double.parseDouble(tx.getText()))	
+					tx.setText("0");
+			}			
 			tryy=tx.getText();
 			if(tryy.equals(a))
-			tx.setText("7");
+				tx.setText("7");
 			else
-			tx.setText(tx.getText()+"7");
+				tx.setText(tx.getText()+"7");
 		});
 
 		a8.setOnAction(e -> {
+			
+			if(mode!=0){
+				if(num1==Double.parseDouble(tx.getText()))	
+					tx.setText("0");
+			}
+				
 			tryy=tx.getText();
 			if(tryy.equals(a))
-			tx.setText("8");
+				tx.setText("8");
 			else
-			tx.setText(tx.getText()+"8");
+				tx.setText(tx.getText()+"8");
 		});
 		
 		a9.setOnAction(e -> {
+		
+			if(mode!=0){
+				if(num1==Double.parseDouble(tx.getText()))	
+					tx.setText("0");
+			}
 			tryy=tx.getText();
 			if(tryy.equals(a))
-			tx.setText("9");
+				tx.setText("9");
 			else
-			tx.setText(tx.getText()+"9");
+				tx.setText(tx.getText()+"9");
 		});		
 		
 		a0.setOnAction(e -> {
+								
 			tryy=tx.getText();
 			if(tryy.equals(a))
-			tx.setText("0");
+				tx.setText("0");
 			else
-			tx.setText(tx.getText()+"0");
+				tx.setText(tx.getText()+"0");
 		});		
 	
 		q3.setOnAction(e -> {
@@ -262,6 +311,34 @@ public class Cal extends Pane {
 		
 		C.setOnAction(e -> {
 			tx.setText("0");
+		});	
+
+		add.setOnAction(e -> {
+			num1=Double.parseDouble(tx.getText());
+			mode=1;
+		});	
+		devide.setOnAction(e -> {
+			num1=Double.parseDouble(tx.getText());
+			mode=2;
+		});			
+		less.setOnAction(e -> {
+			num1=Double.parseDouble(tx.getText());
+			mode=3;
+		});	
+		Multiply.setOnAction(e -> {
+			num1=Double.parseDouble(tx.getText());		
+			mode=4;
+			System.out.println(mode);
+		});	
+
+		equ.setOnAction(e -> {
+
+		
+		
+		
+		
+		
+		
 		});			
 
 		/*del.setOnAction(e -> {
@@ -273,5 +350,6 @@ public class Cal extends Pane {
 		});	
 			*/
 		
-	}
+	}	
 	
+}
