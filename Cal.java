@@ -16,7 +16,7 @@ import javafx.event.*;
 
 public class Cal extends Pane {
 
-    // Place nodes in the pane
+    // new menu and Item 
 	Menu menuView = new Menu("檢視(V)");
 	Menu menuEdit = new Menu("編輯(E)");
 	Menu menu = new Menu("說明(H)");
@@ -40,7 +40,7 @@ public class Cal extends Pane {
 	MenuItem d1 = new MenuItem("檢視說明(V)");
 	MenuItem d2 = new MenuItem("關於小算盤(A)");	
 	
-
+	//new button
 	Button MC=new Button("MC");
 	Button MR=new Button("MR");
 	Button MS=new Button("MS");
@@ -79,12 +79,15 @@ public class Cal extends Pane {
 	String a="0";
 	int b=0;
 	TextField tx=new TextField(a);
+	//add devide ....use
 	double num1,num2;
+	//judgment add less...
 	int mode=0;
 	
 	
 
 	public Cal(){
+		//all setlocate
 		menubar.setPrefSize(300,30);
 		tx.setPrefSize(293,64);
 		menubar.relocate(0,0);
@@ -151,9 +154,11 @@ public class Cal extends Pane {
 		a0.setPrefSize(100,49);
 		q3.setPrefSize(50,49);
 		add.setPrefSize(50,49);	
-		
+		//let it right
 		tx.setAlignment(Pos.CENTER_RIGHT);
-		tx.setEditable(false);	
+		//letit cant edit
+		tx.setEditable(false);
+		//additem to menu
 		menu.getItems().addAll(d1,d2);
 		menuEdit.getItems().addAll(c1,c2,c3);
 		menuView.getItems().addAll(b1,b2,b3,b4,b5,b6,b6,b7,b8,b9,b10);
@@ -162,9 +167,11 @@ public class Cal extends Pane {
 		getChildren().addAll(tx,a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,q1,q2,q3,MC,MR,MS,Madd,Md);
 		getChildren().addAll(del,C,CE,devide,less,addandde,sqrt,Multiply,add,equ);
   	}
+  	//buttonAction()
 	public void buttonAction(){
+		
 		a1.setOnAction(e -> {
-			
+			//judge wheather +-*/
 			if(mode!=0){
 				if(num1==Double.parseDouble(tx.getText()))	
 					tx.setText("0");
@@ -178,7 +185,7 @@ public class Cal extends Pane {
 		});
 		
 		a2.setOnAction(e -> {
-			
+			//judge wheather +-*/
 			if(mode!=0){
 				if(num1==Double.parseDouble(tx.getText()))	
 					tx.setText("0");
@@ -192,7 +199,7 @@ public class Cal extends Pane {
 		});		
 		
 		a3.setOnAction(e -> {
-			
+			//judge wheather +-*/
 			if(mode!=0){
 				if(num1==Double.parseDouble(tx.getText()))	
 					tx.setText("0");
@@ -205,6 +212,7 @@ public class Cal extends Pane {
 		});		
 		
 		a4.setOnAction(e -> {
+			//judge wheather +-*/
 			if(mode!=0){
 				if(num1==Double.parseDouble(tx.getText()))	
 					tx.setText("0");
@@ -219,6 +227,7 @@ public class Cal extends Pane {
 		});	
 		
 		a5.setOnAction(e -> {
+			//judge wheather +-*/
 			if(mode!=0){
 				if(num1==Double.parseDouble(tx.getText()))	
 					tx.setText("0");
@@ -232,6 +241,8 @@ public class Cal extends Pane {
 		});		
 
 		a6.setOnAction(e -> {
+			//judge wheather +-*/
+			
 			if(mode!=0){
 				if(num1==Double.parseDouble(tx.getText()))	
 					tx.setText("0");
