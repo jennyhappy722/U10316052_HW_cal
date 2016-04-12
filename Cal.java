@@ -333,22 +333,39 @@ public class Cal extends Pane {
 
 		equ.setOnAction(e -> {
 
-		
-		
-		
-		
-		
-		
+			if(mode==1){
+				num2=Double.parseDouble(tx.getText());
+				tx.setText(String.valueOf(num1+num2));
+				mode=0;
+			}	
+			if(mode==2){
+				num2=Double.parseDouble(tx.getText());				
+				tx.setText(String.valueOf(num1/num2));
+				mode=0;
+			}
+				
+			if(mode==3){
+				num2=Double.parseDouble(tx.getText());
+				tx.setText(String.valueOf(num1-num2));
+				mode=0;
+			}
+				
+			if(mode==4){
+				num2=Double.parseDouble(tx.getText());
+				tx.setText(String.valueOf(num1*num2));
+				mode=0;
+				
+			}											
 		});			
 
-		/*del.setOnAction(e -> {
+		del.setOnAction(e -> {
 			tryy=tx.getText();
 			int len=tryy.length()-1;
 			char last=tryy.chartAt(len);
 			System.out.println(last);
 			//tx.setText(split());
 		});	
-			*/
+			
 		
 	}	
 	
