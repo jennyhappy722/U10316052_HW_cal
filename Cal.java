@@ -372,11 +372,11 @@ public class Cal extends Pane {
 		del.setOnAction(e -> {
 			tryy=tx.getText();
 			int len=tryy.length()-1;
-			char last=tryy.chartAt(len);
-			System.out.println(last);
-			//tx.setText(split());
+			if(len>0)
+				tx.setText(tryy.substring(0,len));
+			else
+				tx.setText("0");			
 		});	
-			
 		
 	}	
 	
